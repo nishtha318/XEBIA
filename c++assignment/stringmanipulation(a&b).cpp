@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     string str;
-    string temp = " ";
+    string temp = "";
 
     cout << "Enter any string : " << endl ;
     getline(cin , str);
