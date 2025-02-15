@@ -28,12 +28,11 @@ int main()
 
 void reverse_arr(int arr[] , int n)
 {
-    for(int i = 0 ; i <= n / 2 ; i++)
+    for(int i = 0 ; i < n / 2 ; i++)
     {
-        int first = arr[i];
-        int last = arr[n - 1 - i];
-        arr[i] = last;
-        arr[n - 1 - i] = first;
+        int temp = arr[i];
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
 
     }
     
@@ -54,6 +53,11 @@ void find_max(int arr[] , int n)
          largest = arr[0];
          second_largest = arr[1];
     }
+    else 
+    {
+        second_largest = arr[0];
+        largest = arr[1];
+    }
 
     for(int i = 2 ; i < n ; i++)
     {
@@ -61,6 +65,10 @@ void find_max(int arr[] , int n)
         {
             second_largest = largest ;
             largest = arr[i];
+        }
+        else if (arr[i] > second_largest && arr[i] != largest)
+        {
+            second_largest = arr[i];
         }
         
     }
@@ -78,6 +86,11 @@ void find_min(int arr[] , int n)
          minimum = arr[0];
          second_minimum = arr[1];
     }
+    else
+    {
+        second_minimum = arr[0];
+        minimum = arr[1]; 
+    }
 
     for(int i = 2 ; i < n ; i++)
     {
@@ -86,11 +99,18 @@ void find_min(int arr[] , int n)
             second_minimum = minimum;
             minimum = arr[i];
         }
+        else if (arr[i] < second_minimum && arr[i] != minimum)
+        {
+            second_minimum = arr[i];
+        }
         
     }
-    cout << "second minimum element in the array is :" <<" " << second_minimum ;
+    cout << "second minimum element in the array is :" << " " << second_minimum ;
    
 }
+
+
+
 
 
 
