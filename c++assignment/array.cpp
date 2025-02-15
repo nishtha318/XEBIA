@@ -59,7 +59,7 @@ void find_max(int arr[] , int n)
         largest = arr[1];
     }
 
-    for(int i = 2 ; i < n ; i++)
+    for(int i = 0 ; i < n ; i++)
     {
         if(arr[i] > largest)
         {
@@ -92,7 +92,7 @@ void find_min(int arr[] , int n)
         minimum = arr[1]; 
     }
 
-    for(int i = 2 ; i < n ; i++)
+    for(int i = 0 ; i < n ; i++)
     {
         if(arr[i] < minimum)
         {
